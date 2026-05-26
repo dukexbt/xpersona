@@ -32,7 +32,7 @@ body {
   cursor: crosshair;
 }
 
-
+/* noise overlay */
 body::after {
   content: '';
   position: fixed;
@@ -43,9 +43,10 @@ body::after {
   opacity: .5;
 }
 
-
+/* ─── LAYOUT ─── */
 .site { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
 
+/* ─── HERO ─── */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -107,7 +108,7 @@ body::after {
   animation: fadeUp .7s .35s forwards;
 }
 
-
+/* input */
 .input-group {
   display: flex;
   align-items: stretch;
@@ -172,7 +173,7 @@ body::after {
 .input-btn:hover { background: var(--rust); }
 .input-btn:active { transform: scale(.97); }
 
-
+/* scroll hint */
 .scroll-hint {
   position: absolute;
   bottom: 3rem;
@@ -196,7 +197,7 @@ body::after {
   overflow: visible;
 }
 
-
+/* decorative number */
 .deco-num {
   position: absolute;
   right: -1rem;
@@ -212,7 +213,7 @@ body::after {
   letter-spacing: -.05em;
 }
 
-
+/* ─── RESULT SECTION ─── */
 #result {
   display: none;
   padding: 5rem 0;
@@ -235,7 +236,7 @@ body::after {
   white-space: nowrap;
 }
 
-
+/* archetype card */
 .arch-card {
   border: 1px solid var(--border-strong);
   padding: 3rem;
@@ -285,7 +286,7 @@ body::after {
   max-width: 560px;
 }
 
-
+/* big decorative letter */
 .arch-card-deco {
   position: absolute;
   right: 2rem;
@@ -299,7 +300,7 @@ body::after {
   user-select: none;
 }
 
-
+/* stats */
 .stats-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -335,7 +336,7 @@ body::after {
 .stat-cell-val.success { color: #3a7a4a; }
 .stat-cell-val.warn { color: var(--gold); }
 
-
+/* report */
 .report-block {
   border: 1px solid var(--border-strong);
   margin-bottom: 2rem;
@@ -392,7 +393,7 @@ body::after {
   padding: 1rem 1.5rem;
 }
 
-
+/* jobs */
 .jobs-block {
   border: 1px solid var(--border-strong);
   margin-bottom: 2rem;
@@ -425,7 +426,7 @@ body::after {
 .job-pay { font-size: 12px; color: var(--gold); font-variant-numeric: tabular-nums; }
 .job-match { font-size: 10px; letter-spacing: .1em; color: var(--muted); border: 1px solid var(--border); padding: 3px 8px; border-radius: 1px; }
 
-
+/* portfolio */
 .pf-block {
   border: 1px solid var(--border-strong);
   margin-bottom: 2rem;
@@ -469,7 +470,7 @@ body::after {
   transition: width 1.2s cubic-bezier(.4,0,.2,1);
 }
 
-
+/* actions */
 .action-row {
   display: flex;
   gap: 0;
@@ -504,7 +505,7 @@ body::after {
 
 .action-btn.primary:hover { background: var(--rust); }
 
-
+/* ─── FOOTER ─── */
 .site-footer {
   padding: 3rem 0;
   border-top: 1px solid var(--border);
@@ -537,12 +538,13 @@ body::after {
 
 .footer-right a:hover { color: var(--rust); border-color: var(--rust); }
 
+/* ─── ANIMATIONS ─── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-
+/* ─── MOBILE ─── */
 @media (max-width: 600px) {
   .site { padding: 0 1.25rem; }
   .stats-row { grid-template-columns: 1fr 1fr; }
@@ -562,7 +564,7 @@ body::after {
 
 <main class="site">
 
-
+  <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero-eyebrow">
       <div class="eyebrow-line"></div>
@@ -599,7 +601,7 @@ body::after {
     <div class="deco-num" id="decoNum">W3</div>
   </section>
 
- 
+  <!-- RESULT -->
   <section id="result">
 
     <div class="result-divider">
@@ -608,7 +610,7 @@ body::after {
       <div class="result-divider-line"></div>
     </div>
 
- 
+    <!-- Archetype Banner -->
     <div class="arch-card" id="archCard">
       <div class="arch-card-tag" id="archTierTag"></div>
       <h2 class="arch-title" id="archTitle"></h2>
@@ -616,7 +618,7 @@ body::after {
       <div class="arch-card-deco" id="archDeco"></div>
     </div>
 
-
+    <!-- Stats -->
     <div class="stats-row">
       <div class="stat-cell">
         <div class="stat-cell-label">Broke index</div>
@@ -632,7 +634,7 @@ body::after {
       </div>
     </div>
 
-  
+    <!-- Personality Report -->
     <div class="report-block">
       <div class="report-header">
         <span class="report-header-title">Personality report</span>
@@ -641,19 +643,19 @@ body::after {
       <div class="report-body" id="reportBody"></div>
     </div>
 
-
+    <!-- Jobs -->
     <div class="jobs-block" id="jobsBlock">
       <div class="jobs-header">Recommended jobs — you need one</div>
       <div id="jobsBody"></div>
     </div>
 
-
+    <!-- Portfolio -->
     <div class="pf-block">
       <div class="pf-header">Estimated portfolio breakdown</div>
       <div id="pfBody"></div>
     </div>
 
-
+    <!-- Actions -->
     <div class="action-row">
       <button class="action-btn primary" onclick="doShareX()">Post on X</button>
       <button class="action-btn" onclick="doCopy(event)">Copy result</button>
@@ -664,7 +666,7 @@ body::after {
 
 </main>
 
-
+<!-- FOOTER -->
 <footer class="site-footer site">
   <div class="footer-left">
     For entertainment only. No financial advice.<br>
@@ -676,7 +678,7 @@ body::after {
 </footer>
 
 <script>
-
+/* ─── DATA ─── */
 const ARCHETYPES = [
   {
     name: "Certified broke degen",
@@ -771,6 +773,7 @@ const ARCHETYPES = [
 ];
 
 const ROASTS_BROKE = [
+  // original 10
   "Your idea of DeFi is borrowing $20 from your friend to buy memecoins at 3am.",
   "You've explained 'this is the dip' so many times she left. Bullish for your bags though.",
   "Last month: panic sold the bottom. This month: FOMO'd into the top. You are a perfect inverse indicator.",
@@ -781,6 +784,31 @@ const ROASTS_BROKE = [
   "You have a folder named 'RETIREMENT FUND' containing $43 in SHIB and a dead Axie Infinity scholar.",
   "Your tax return has a dedicated section for loss harvesting. That section is just everything.",
   "You explained your investment thesis at Christmas. No one invited you this year.",
+  // new broke roasts
+  "Crypto is clearly not working for you. Neither is anything else, but crypto specifically is a disaster.",
+  "Get a job. Any job. The gas station down the street is hiring and they don't require you to understand tokenomics.",
+  "Your landlord has asked you to stop paying rent in memecoins. He said it the third time with a lawyer present.",
+  "You have never once timed the market correctly. Not even by accident. Statistically this is impressive.",
+  "Your financial advisor quit. He said watching your portfolio physically hurt him as a professional.",
+  "You've been 'getting into Web3' for four years. At some point that's just where you live now. Rent free in a rugged project.",
+  "You lost money on a stablecoin. A STABLECOIN. The one thing designed to not lose money. Incredible.",
+  "Your seed phrase is saved in a Google Doc titled 'VERY IMPORTANT DO NOT OPEN'. You shared that doc in a Discord.",
+  "You called ETH at $1 'too expensive'. You bought a dog coin at $0.000001 and called it 'undervalued'. You were wrong both times.",
+  "The number of 'last chances to buy' tweets you've screenshot and saved is now in the thousands. None of them were.",
+  "You went all-in on a project because the founder's Twitter bio said 'serial entrepreneur'. He was 19. He is now 20 and on a beach.",
+  "Your portfolio has a -87% coin that you refuse to sell because 'selling is admitting defeat'. Brother you are already defeated.",
+  "You bought the rumor AND the news. And the dip after the news. And the dead cat bounce. You are funding someone's yacht.",
+  "Crypto is clearly not for you but neither is walking away, so here you are, a broke monument to stubbornness.",
+  "You sent ETH to a contract address to 'claim' free tokens. You then did it again with a different wallet. Twice.",
+  "Your mom asked how crypto is going. You changed the subject. She already knew.",
+  "You've been 'studying the charts' for two years. The charts have been studying you back. They feel sorry for you.",
+  "You told everyone to buy. They bought. It dumped. They don't call anymore. You think it's a coincidence.",
+  "Your stop loss is 'I'll sell when I break even'. You will never break even. This is your life now.",
+  "You have a price alert set for a coin that no longer exists. The app still pings you. You still check.",
+  "You rage-quit crypto in 2022, came back in 2023, rage-quit again, came back in 2024. You are addicted to losing.",
+  "You asked a founder 'wen token?' in four separate AMAs. You were removed from three of them.",
+  "Your entire strategy is based on a YouTube thumbnail of a man pointing at a chart. He was wrong. You went in anyway.",
+  "You've been in the 'presale' of six projects. Zero of them made it to a real sale. You are purely a presale statistic.",
 ];
 
 const ROASTS_MID = [
@@ -791,14 +819,36 @@ const ROASTS_MID = [
   "Your Discord has 47 members: 30 bots, 10 alts, 6 friends who feel bad for you, and one real user.",
   "You call yourself an 'early adopter' because you made a Coinbase account in 2020.",
   "Three testnet quests this week. $0 earned. One NFT badge. You will do it again next week.",
+  "Your 'alpha' is always three days behind Crypto Twitter and one week behind Reddit. You are the exit liquidity.",
+  "You've changed your bio to include 'OG' despite joining in 2021. The OGs remember. You are not one of them.",
+  "You wrote a 12-tweet thread about a project's 'fundamentals'. The project deleted its Twitter the next morning.",
+  "You've attended four blockchain conferences and have learned nothing except that the free t-shirts are always too big.",
+  "Get a job. The Web3 space has enough people 'building in the bear'. Start building a savings account.",
+  "You moderate a Telegram group for a project that hasn't posted in 11 months. You ban anyone who asks why.",
+  "Your 'side project' is an NFT marketplace for a chain with 12 users. You are three of the 12 users.",
+  "You posted 'not selling' with a rocket emoji at $3.40. It is now $0.11. You are still not selling. There is nothing left to sell.",
+  "You describe yourself as a 'connector in the space'. This means you DM founders asking for WL spots and get blocked.",
+  "Crypto is clearly not working for you the way employment would. LinkedIn is free. The button says Apply.",
+  "You unironically used the phrase 'paradigm shift' in a Discord message about a coin with a dog logo.",
+  "You've given 'alpha' that aged so badly people screenshot it as a joke. In multiple servers.",
+  "Your GitHub has one repo. It is a fork. It has zero stars. It has not been touched in 14 months. You list it on your resume.",
+  "You called three different coins 'the Ethereum killer'. All three are dead. Ethereum is fine.",
+  "You have opinions on every L2 but your entire on-chain history is two swaps and a failed transaction.",
 ];
 
 const ROASTS_RICH = [
+  // original 5
   "You don't check prices. Prices check you.",
   "Your monthly gas fee budget is someone else's salary. You genuinely don't notice.",
   "You've deployed more in one transaction than most people earn in a year.",
   "You were early. You stayed early. You didn't sell. That's the entire story.",
   "Lesser degens ask 'when moon'. You built the moon.",
+  // new rich roasts
+  "You still use the same cold wallet from 2018. It looks like it's been through a war. It's worth more than most houses.",
+  "Your biggest regret is selling 10% to cover taxes in 2021. That 10% is now its own zip code.",
+  "You don't have a portfolio. You have a position. Singular. It worked.",
+  "You've forgotten which wallets hold what. This is not a problem most people have.",
+  "You quietly exited while everyone else was busy posting rocket emojis. Silence is the loudest flex.",
 ];
 
 const JOBS = [
@@ -827,7 +877,7 @@ const PF_RICH = [
   { label: "Early stage bets", color: "#7a5a8a" },
 ];
 
-
+/* ─── UTILS ─── */
 function hash(s) {
   let h = 5381;
   for (let i = 0; i < s.length; i++) {
@@ -837,28 +887,45 @@ function hash(s) {
   return Math.abs(h);
 }
 
-function sr(seed, max) {
-  const x = Math.sin(seed + 1) * 10000;
-  return Math.floor((x - Math.floor(x)) * max);
+// Mulberry32 — fast, uniform, seeded PRNG. No clustering like Math.sin.
+function makeRng(seed) {
+  let s = seed >>> 0;
+  return function() {
+    s += 0x6d2b79f5;
+    let t = Math.imul(s ^ (s >>> 15), 1 | s);
+    t ^= t + Math.imul(t ^ (t >>> 7), 61 | t);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
 }
 
+function seededShuffle(arr, rng) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+/* ─── MAIN ─── */
 function runCheck() {
   const raw = document.getElementById('handleInput').value.trim().replace('@', '');
   if (!raw) { document.getElementById('handleInput').focus(); return; }
   const u = raw.toLowerCase();
   const h = hash(u);
+  const rng = makeRng(h);
 
-  const ai = sr(h, ARCHETYPES.length);
+  const ai = Math.floor(rng() * ARCHETYPES.length);
   const arch = ARCHETYPES[ai];
 
-  const bScore = sr(h * 3, 100) + 1;
-  const hnScore = sr(h * 7, 100) + 1;
-  const dScore = sr(h * 11, 100) + 1;
+  const bScore = Math.floor(rng() * 100) + 1;
+  const hnScore = Math.floor(rng() * 100) + 1;
+  const dScore = Math.floor(rng() * 100) + 1;
 
-
+  // handle label
   document.getElementById('resultHandle').textContent = `@${raw} — your verdict`;
 
-
+  // archetype card
   const tierTag = document.getElementById('archTierTag');
   tierTag.textContent = arch.tier;
   tierTag.className = 'arch-card-tag ' + arch.tierClass;
@@ -870,20 +937,15 @@ function runCheck() {
   document.getElementById('archTagline').textContent = arch.tagline;
   document.getElementById('archDeco').textContent = arch.deco;
 
-
+  // stats
   document.getElementById('statBroke').textContent = bScore + '%';
   document.getElementById('statHands').textContent = hnScore + '%';
   document.getElementById('statDegen').textContent = dScore + '%';
 
-
+  // roast lines — seeded shuffle, same handle = same roasts every time
   const pool = arch.rich ? ROASTS_RICH : (ai <= 1 ? ROASTS_BROKE : ROASTS_MID);
   const cnt = arch.rich ? 3 : 5;
-  const used = new Set(); const lines = []; let a = 0;
-  while (lines.length < Math.min(cnt, pool.length) && a < 60) {
-    const idx = sr(h * (a + 13), pool.length);
-    if (!used.has(idx)) { used.add(idx); lines.push(pool[idx]); }
-    a++;
-  }
+  const lines = seededShuffle(pool, rng).slice(0, cnt);
 
   document.getElementById('reportCount').textContent = lines.length + ' findings';
   document.getElementById('reportBody').innerHTML = lines.map((l, i) =>
@@ -893,16 +955,11 @@ function runCheck() {
     </div>`
   ).join('');
 
-
+  // jobs
   const jb = document.getElementById('jobsBlock');
   if (!arch.rich) {
     jb.style.display = 'block';
-    const jusedSet = new Set(); const jobs = []; let ja = 0;
-    while (jobs.length < 4 && ja < 60) {
-      const idx = sr(h * (ja + 77), JOBS.length);
-      if (!jusedSet.has(idx)) { jusedSet.add(idx); jobs.push(JOBS[idx]); }
-      ja++;
-    }
+    const jobs = seededShuffle(JOBS, rng).slice(0, 4);
     document.getElementById('jobsBody').innerHTML = jobs.map(j =>
       `<div class="job-row">
         <span class="job-name">${j.name}</span>
@@ -914,11 +971,12 @@ function runCheck() {
     jb.style.display = 'none';
   }
 
+  // portfolio
   const tpl = arch.rich ? PF_RICH : PF_BROKE;
   let rem = 100;
   const vals = tpl.map((p, i) => {
     if (i === tpl.length - 1) return { ...p, v: rem };
-    const rv = Math.min(sr(h * (i + 200), 50) + 10, rem - (tpl.length - i - 1) * 5);
+    const rv = Math.min(Math.floor(rng() * 50) + 10, rem - (tpl.length - i - 1) * 5);
     rem -= rv;
     return { ...p, v: rv };
   });
@@ -935,14 +993,15 @@ function runCheck() {
     </div>`
   ).join('');
 
-
+  // show result
   const res = document.getElementById('result');
   res.style.display = 'block';
   res.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-
+  // animate deco num
   document.getElementById('decoNum').textContent = arch.deco;
 
+  // animate bars
   setTimeout(() => {
     document.querySelectorAll('.pf-fill').forEach(el => {
       el.style.width = el.getAttribute('data-w');
