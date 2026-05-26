@@ -32,7 +32,7 @@ body {
   cursor: crosshair;
 }
 
-/* noise overlay */
+
 body::after {
   content: '';
   position: fixed;
@@ -43,10 +43,9 @@ body::after {
   opacity: .5;
 }
 
-/* ─── LAYOUT ─── */
+
 .site { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
 
-/* ─── HERO ─── */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -108,7 +107,7 @@ body::after {
   animation: fadeUp .7s .35s forwards;
 }
 
-/* input */
+
 .input-group {
   display: flex;
   align-items: stretch;
@@ -173,7 +172,7 @@ body::after {
 .input-btn:hover { background: var(--rust); }
 .input-btn:active { transform: scale(.97); }
 
-/* scroll hint */
+
 .scroll-hint {
   position: absolute;
   bottom: 3rem;
@@ -197,7 +196,7 @@ body::after {
   overflow: visible;
 }
 
-/* decorative number */
+
 .deco-num {
   position: absolute;
   right: -1rem;
@@ -213,7 +212,7 @@ body::after {
   letter-spacing: -.05em;
 }
 
-/* ─── RESULT SECTION ─── */
+
 #result {
   display: none;
   padding: 5rem 0;
@@ -236,7 +235,7 @@ body::after {
   white-space: nowrap;
 }
 
-/* archetype card */
+
 .arch-card {
   border: 1px solid var(--border-strong);
   padding: 3rem;
@@ -286,7 +285,7 @@ body::after {
   max-width: 560px;
 }
 
-/* big decorative letter */
+
 .arch-card-deco {
   position: absolute;
   right: 2rem;
@@ -300,7 +299,7 @@ body::after {
   user-select: none;
 }
 
-/* stats */
+
 .stats-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -336,7 +335,7 @@ body::after {
 .stat-cell-val.success { color: #3a7a4a; }
 .stat-cell-val.warn { color: var(--gold); }
 
-/* report */
+
 .report-block {
   border: 1px solid var(--border-strong);
   margin-bottom: 2rem;
@@ -393,7 +392,7 @@ body::after {
   padding: 1rem 1.5rem;
 }
 
-/* jobs */
+
 .jobs-block {
   border: 1px solid var(--border-strong);
   margin-bottom: 2rem;
@@ -426,7 +425,7 @@ body::after {
 .job-pay { font-size: 12px; color: var(--gold); font-variant-numeric: tabular-nums; }
 .job-match { font-size: 10px; letter-spacing: .1em; color: var(--muted); border: 1px solid var(--border); padding: 3px 8px; border-radius: 1px; }
 
-/* portfolio */
+
 .pf-block {
   border: 1px solid var(--border-strong);
   margin-bottom: 2rem;
@@ -470,7 +469,7 @@ body::after {
   transition: width 1.2s cubic-bezier(.4,0,.2,1);
 }
 
-/* actions */
+
 .action-row {
   display: flex;
   gap: 0;
@@ -505,7 +504,7 @@ body::after {
 
 .action-btn.primary:hover { background: var(--rust); }
 
-/* ─── FOOTER ─── */
+
 .site-footer {
   padding: 3rem 0;
   border-top: 1px solid var(--border);
@@ -538,13 +537,12 @@ body::after {
 
 .footer-right a:hover { color: var(--rust); border-color: var(--rust); }
 
-/* ─── ANIMATIONS ─── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── MOBILE ─── */
+
 @media (max-width: 600px) {
   .site { padding: 0 1.25rem; }
   .stats-row { grid-template-columns: 1fr 1fr; }
@@ -564,7 +562,7 @@ body::after {
 
 <main class="site">
 
-  <!-- HERO -->
+
   <section class="hero" id="hero">
     <div class="hero-eyebrow">
       <div class="eyebrow-line"></div>
@@ -601,7 +599,7 @@ body::after {
     <div class="deco-num" id="decoNum">W3</div>
   </section>
 
-  <!-- RESULT -->
+ 
   <section id="result">
 
     <div class="result-divider">
@@ -610,7 +608,7 @@ body::after {
       <div class="result-divider-line"></div>
     </div>
 
-    <!-- Archetype Banner -->
+ 
     <div class="arch-card" id="archCard">
       <div class="arch-card-tag" id="archTierTag"></div>
       <h2 class="arch-title" id="archTitle"></h2>
@@ -618,7 +616,7 @@ body::after {
       <div class="arch-card-deco" id="archDeco"></div>
     </div>
 
-    <!-- Stats -->
+
     <div class="stats-row">
       <div class="stat-cell">
         <div class="stat-cell-label">Broke index</div>
@@ -634,7 +632,7 @@ body::after {
       </div>
     </div>
 
-    <!-- Personality Report -->
+  
     <div class="report-block">
       <div class="report-header">
         <span class="report-header-title">Personality report</span>
@@ -643,19 +641,19 @@ body::after {
       <div class="report-body" id="reportBody"></div>
     </div>
 
-    <!-- Jobs -->
+
     <div class="jobs-block" id="jobsBlock">
       <div class="jobs-header">Recommended jobs — you need one</div>
       <div id="jobsBody"></div>
     </div>
 
-    <!-- Portfolio -->
+
     <div class="pf-block">
       <div class="pf-header">Estimated portfolio breakdown</div>
       <div id="pfBody"></div>
     </div>
 
-    <!-- Actions -->
+
     <div class="action-row">
       <button class="action-btn primary" onclick="doShareX()">Post on X</button>
       <button class="action-btn" onclick="doCopy(event)">Copy result</button>
@@ -666,7 +664,7 @@ body::after {
 
 </main>
 
-<!-- FOOTER -->
+
 <footer class="site-footer site">
   <div class="footer-left">
     For entertainment only. No financial advice.<br>
@@ -678,7 +676,7 @@ body::after {
 </footer>
 
 <script>
-/* ─── DATA ─── */
+
 const ARCHETYPES = [
   {
     name: "Certified broke degen",
@@ -829,7 +827,7 @@ const PF_RICH = [
   { label: "Early stage bets", color: "#7a5a8a" },
 ];
 
-/* ─── UTILS ─── */
+
 function hash(s) {
   let h = 5381;
   for (let i = 0; i < s.length; i++) {
@@ -844,7 +842,6 @@ function sr(seed, max) {
   return Math.floor((x - Math.floor(x)) * max);
 }
 
-/* ─── MAIN ─── */
 function runCheck() {
   const raw = document.getElementById('handleInput').value.trim().replace('@', '');
   if (!raw) { document.getElementById('handleInput').focus(); return; }
@@ -858,10 +855,10 @@ function runCheck() {
   const hnScore = sr(h * 7, 100) + 1;
   const dScore = sr(h * 11, 100) + 1;
 
-  // handle label
+
   document.getElementById('resultHandle').textContent = `@${raw} — your verdict`;
 
-  // archetype card
+
   const tierTag = document.getElementById('archTierTag');
   tierTag.textContent = arch.tier;
   tierTag.className = 'arch-card-tag ' + arch.tierClass;
@@ -873,12 +870,12 @@ function runCheck() {
   document.getElementById('archTagline').textContent = arch.tagline;
   document.getElementById('archDeco').textContent = arch.deco;
 
-  // stats
+
   document.getElementById('statBroke').textContent = bScore + '%';
   document.getElementById('statHands').textContent = hnScore + '%';
   document.getElementById('statDegen').textContent = dScore + '%';
 
-  // roast lines
+
   const pool = arch.rich ? ROASTS_RICH : (ai <= 1 ? ROASTS_BROKE : ROASTS_MID);
   const cnt = arch.rich ? 3 : 5;
   const used = new Set(); const lines = []; let a = 0;
@@ -896,7 +893,7 @@ function runCheck() {
     </div>`
   ).join('');
 
-  // jobs
+
   const jb = document.getElementById('jobsBlock');
   if (!arch.rich) {
     jb.style.display = 'block';
@@ -917,7 +914,6 @@ function runCheck() {
     jb.style.display = 'none';
   }
 
-  // portfolio
   const tpl = arch.rich ? PF_RICH : PF_BROKE;
   let rem = 100;
   const vals = tpl.map((p, i) => {
@@ -939,15 +935,14 @@ function runCheck() {
     </div>`
   ).join('');
 
-  // show result
+
   const res = document.getElementById('result');
   res.style.display = 'block';
   res.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-  // animate deco num
+
   document.getElementById('decoNum').textContent = arch.deco;
 
-  // animate bars
   setTimeout(() => {
     document.querySelectorAll('.pf-fill').forEach(el => {
       el.style.width = el.getAttribute('data-w');
